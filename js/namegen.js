@@ -2,7 +2,7 @@ const generateNames = function() {
     let numOfWords = 2;
     let numOfNames = 20;
 
-    let data = document.getElementById('elements').value;
+    let data = document.getElementById('seeds').value;
     let results = document.getElementById('results');
 
     function isCommented(word) {
@@ -25,8 +25,9 @@ const generateNames = function() {
     }
 
     results.innerHTML = choices.join('');
-
-
 }
 
+const clearSeeds = function() {
+    document.getElementById('seeds').value = '';
+}
 

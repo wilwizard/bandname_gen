@@ -12,9 +12,9 @@
 <body>
 	<script src="js/namegen.js"></script>
 	<h1>Band Name Generator</h1>
-	<h2>Enter names</h2>
+	<h2>Enter words you'd like to use</h2>
 	<div>Lines beginning with // will be ignored</div>
-	<textarea id='elements' style="height: 1000px; width:500px">
+	<textarea id='seeds' style="height: 1000px; width:500px">
 Earthly
 Earth
 Planet
@@ -67,6 +67,7 @@ Band
 	</textarea>
 
 	<button onclick="generateNames()">Generate Names</button>
+	<button onclick="clearSeeds()">Clear Words</button>
 
   <h2>Results</h2>
 
