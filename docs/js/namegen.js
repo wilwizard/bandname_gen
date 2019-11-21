@@ -3,6 +3,7 @@ const generateNames = function() {
     let numOfNames = 10;
 
     let data = document.getElementById('elements').value;
+    let results = document.getElementById('results');
 
     const words = data.split("\n").filter((word) => {
         return word !== '' && word[0] !== '\t';
@@ -15,9 +16,10 @@ const generateNames = function() {
             let word = words[Math.floor(Math.random() * words.length)];
             chosen.push(word);
         }
-        choices.push(chosen.join(' '));
+        choices.push(`<li>${chosen.join(' ')}</li>`);
     }
-    console.log(choices);
+
+    results.innerHTML += choices.join('');
 
 
 }
