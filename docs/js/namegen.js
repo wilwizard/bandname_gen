@@ -1,12 +1,17 @@
 const generateNames = function() {
     let numOfWords = 2;
-    let numOfNames = 10;
+    let numOfNames = 20;
 
     let data = document.getElementById('elements').value;
     let results = document.getElementById('results');
 
-    const words = data.split("\n").filter((word) => {
-        return word !== '' && word[0] !== '\t';
+    function isCommented(word) {
+        return word[0] === '/' && word[1] === '/';
+    }
+
+    const words = data.split("\n").filter((line) => {
+        let word = line.trim();
+        return word !== '' && !isCommented(word);
     });
     let choices = [];
 
@@ -19,7 +24,7 @@ const generateNames = function() {
         choices.push(`<li>${chosen.join(' ')}</li>`);
     }
 
-    results.innerHTML += choices.join('');
+    results.innerHTML = choices.join('');
 
 
 }
